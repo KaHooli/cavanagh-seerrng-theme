@@ -1,0 +1,31 @@
+name: Publish theme package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate theme and tag
+        run: |
+          node scripts/validate-theme.mjs
+          test "${GITHUB_REF_NAME#v}" = "$(node -p "require('./theme.json').version")"
+      - name: Package theme
+        run: |
+          mkdir -p dist/cavanagh
+          cp -R theme.json README.md LICENSE assets dist/cavanagh/
+          tar --format=ustar -C dist -czf "cavanagh-seerrng-theme-${GITHUB_REF_NAME}.tar.gz" cavanagh
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: cavanagh-seerrng-theme-*.tar.gz
+          generate_release_notes: true

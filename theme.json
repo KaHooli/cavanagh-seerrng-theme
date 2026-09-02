@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "cavanagh",
+  "name": "Cavanagh",
+  "version": "1.0.0",
+  "minimumSeerrVersion": "3.13.0",
+  "author": "KaHooli",
+  "swatches": ["#8f171b", "#4a0c10", "#c69a45", "#151515"],
+  "colors": {
+    "surface": [
+      "#fffdf8", "#fbf7ef", "#f5efe3", "#e0d7c7", "#b7aa98",
+      "#7d7062", "#52463e", "#362b28", "#231c18", "#151515", "#0c0c0d"
+    ],
+    "primary": [
+      "#fff1f1", "#fde2e2", "#f9c2c3", "#ef8e91", "#d84b50",
+      "#a81e24", "#8f171b", "#741216", "#5b0e12", "#4a0c10", "#2b0709"
+    ],
+    "secondary": [
+      "#fffbf0", "#faf1d3", "#f1dca5", "#e1c26f", "#d2ab4b",
+      "#c69a45", "#a97d34", "#896027", "#68461d", "#4b3015", "#2b1b0c"
+    ]
+  },
+  "assets": {
+    "logoDark": "assets/cavanagh-logo-dark.svg",
+    "logoLight": "assets/cavanagh-logo-light.svg",
+    "iconDark": "assets/cavanagh-icon-dark.svg",
+    "iconLight": "assets/cavanagh-icon-light.svg",
+    "faviconDark": "assets/favicon-dark.svg",
+    "faviconLight": "assets/favicon-light.svg",
+    "backgroundDark": "assets/background-dark.webp",
+    "backgroundLight": "assets/background-light.webp"
+  }
+}
