@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "cavanagh",
   "name": "Cavanagh",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minimumSeerrVersion": "3.13.0",
   "author": "KaHooli",
   "swatches": ["#8f171b", "#4a0c10", "#c69a45", "#151515"],
@@ -21,10 +21,6 @@
     ]
   },
   "assets": {
-    "logoDark": "assets/cavanagh-logo-dark.svg",
-    "logoLight": "assets/cavanagh-logo-light.svg",
-    "logoStackedDark": "assets/cavanagh-logo-stacked-dark.svg",
-    "logoStackedLight": "assets/cavanagh-logo-stacked-light.svg",
     "iconDark": "assets/cavanagh-icon-dark.svg",
     "iconLight": "assets/cavanagh-icon-light.svg",
     "faviconDark": "assets/favicon-dark.svg",
