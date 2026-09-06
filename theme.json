@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "cavanagh",
   "name": "Cavanagh",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "minimumSeerrVersion": "3.13.0",
   "author": "KaHooli",
   "swatches": ["#8f171b", "#4a0c10", "#c69a45", "#151515"],
