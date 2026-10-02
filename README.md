@@ -39,6 +39,13 @@ Use **Reload Themes** in SeerrNG after copying or updating the package.
 - Charcoal: `#151515`
 - Near Black: `#0C0C0D`
 
+## Icons
+
+`iconDark` and `iconLight` are 180×180 PNGs because iOS ignores SVG home-screen
+icons. They are rendered from `assets/cavanagh-icon-*.svg` with square corners,
+since iOS applies its own rounded mask and fills transparent corners with black.
+The favicons stay SVG.
+
 ## Development
 
 Run `node scripts/validate-theme.mjs` before creating a release. Release tags
