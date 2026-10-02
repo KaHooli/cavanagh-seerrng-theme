@@ -44,7 +44,8 @@ Use **Reload Themes** in SeerrNG after copying or updating the package.
 `iconDark` and `iconLight` are 180×180 PNGs because iOS ignores SVG home-screen
 icons. They are rendered from `assets/cavanagh-icon-*.svg` with square corners,
 since iOS applies its own rounded mask and fills transparent corners with black.
-The favicons stay SVG.
+The favicons are 32×32 PNGs rendered from the same SVGs, because older Safari
+ignores SVG favicons.
 
 ## Development
 

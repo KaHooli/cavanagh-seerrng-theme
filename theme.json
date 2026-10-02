@@ -23,8 +23,8 @@
   "assets": {
     "iconDark": "assets/apple-touch-icon-dark.png",
     "iconLight": "assets/apple-touch-icon-light.png",
-    "faviconDark": "assets/favicon-dark.svg",
-    "faviconLight": "assets/favicon-light.svg",
+    "faviconDark": "assets/favicon-dark.png",
+    "faviconLight": "assets/favicon-light.png",
     "backgroundDark": "assets/background-dark.webp",
     "backgroundLight": "assets/background-light.webp"
   }
