@@ -17,21 +17,44 @@ release with those.
 ## Install
 
 Download `cavanagh-<version>.seerrtheme` and its `.sha256` file from the
-[latest release](https://github.com/KaHooli/cavanagh-seerrng-theme/releases/latest),
-check the download, then install it with the CLI of the SeerrNG release you run
-(as the application user, with the same `CONFIG_DIRECTORY`):
+[latest release](https://github.com/KaHooli/cavanagh-seerrng-theme/releases/latest)
+and check the download:
 
 ```sh
 sha256sum --check cavanagh-2.0.0.seerrtheme.sha256
+```
+
+### Docker (`ghcr.io/snapetech-org/seerrng`)
+
+Put the file in the folder mapped to `/app/config` (on Unraid usually
+`/mnt/user/appdata/seerrng`), then install it with the CLI inside the
+container. Replace `seerrng` with your container's name:
+
+```sh
+docker exec seerrng node dist/commands/interfaceTheme.js validate /app/config/cavanagh-2.0.0.seerrtheme
+docker exec seerrng node dist/commands/interfaceTheme.js install /app/config/cavanagh-2.0.0.seerrtheme
+docker restart seerrng
+```
+
+The installer copies the theme into `/app/config/interface-themes/cavanagh`,
+so the downloaded file can be deleted afterwards.
+
+### From a SeerrNG checkout
+
+Run the commands as the application user, with the same `CONFIG_DIRECTORY`:
+
+```sh
 pnpm interface-theme:validate ./cavanagh-2.0.0.seerrtheme
 pnpm interface-theme:install ./cavanagh-2.0.0.seerrtheme
 ```
 
-On a packaged SeerrNG host without pnpm, use
-`node dist/commands/interfaceTheme.js install ./cavanagh-2.0.0.seerrtheme`.
+Then restart SeerrNG.
 
-Restart SeerrNG, then choose **Cavanagh** under **Theme picker → Interface
-design**. To update to a newer release, install it with `--replace` and restart.
+### Choose the theme
+
+After the restart, choose **Cavanagh** under **Theme picker → Interface
+design**. The choice is saved per account. To update to a newer release,
+install it with `--replace` added and restart again.
 
 ## Palette
 
