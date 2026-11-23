@@ -56,6 +56,11 @@ After the restart, choose **Cavanagh** under **Theme picker → Interface
 design**. The choice is saved per account. To update to a newer release,
 install it with `--replace` added and restart again.
 
+## Lumen
+
+Lumen, the simpler front end bundled with SeerrNG, does not use interface
+themes. To brand it with the Cavanagh crest instead, see [`lumen/`](lumen/README.md).
+
 ## Palette
 
 | Role                  | Dark mode                 | Light mode                 |
