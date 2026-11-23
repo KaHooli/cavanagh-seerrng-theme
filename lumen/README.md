@@ -18,13 +18,13 @@ icons itself and fills transparent areas with black.
    everyone**.
 2. Use **Upload** for the logo and choose `cavanagh-lumen-logo.png`.
 3. Use **Upload** for the tab icon and choose `cavanagh-lumen-icon.png`.
-4. If the page offers a logo shape, choose **raw** so the round crest keeps its
-   transparent edges instead of being cropped into a rounded square. **circle**
+4. Under **Logo shape**, choose **As uploaded** so the round crest keeps its
+   transparent edges instead of being cropped into a rounded square. **Circle**
    also works.
 5. Press **Save for everyone**.
 
 With a `lumen-config.json` file instead, put both files in the branding folder
-and use:
+and use the following (`"raw"` is the file's name for **As uploaded**):
 
 ```json
 "branding": {

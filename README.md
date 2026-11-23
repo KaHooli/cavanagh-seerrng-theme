@@ -52,9 +52,20 @@ Then restart SeerrNG.
 
 ### Choose the theme
 
-After the restart, choose **Cavanagh** under **Theme picker → Interface
-design**. The choice is saved per account. To update to a newer release,
-install it with `--replace` added and restart again.
+Interface themes apply to full SeerrNG, not to Lumen. If SeerrNG opens in
+Lumen, use full SeerrNG at `/seerrng`, or set **Settings → General → Default
+Interface** to full SeerrNG.
+
+After the restart, open the theme picker:
+
+- On a screen at least 1024 pixels wide with a Persius-layout design, it is
+  the ‹ button on the small panel at the right edge of the page.
+- On narrower screens, and with the SeerrOrig or SeerrNGJ designs, it is the
+  paintbrush button at the top right, next to your profile picture.
+
+Choose **Cavanagh** under **Interface design**. The choice is saved per account.
+To update to a newer release, install it with `--replace` added and restart
+again.
 
 ## Lumen
 
