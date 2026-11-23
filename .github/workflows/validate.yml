@@ -15,4 +15,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/validate-theme.mjs
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - name: Pack and re-validate the bundle
+        run: |
+          npm run pack
+          npm run validate -- dist/cavanagh-*.seerrtheme
+          (cd dist && sha256sum --check ./*.sha256)

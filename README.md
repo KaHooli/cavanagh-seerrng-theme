@@ -1,53 +1,72 @@
 # Cavanagh theme for SeerrNG
 
-A light and dark SeerrNG theme package using the Cavanagh Family visual identity.
+A SeerrNG interface theme in the Cavanagh Family colours, for dark and light
+mode. It uses SeerrNG's PersiusNG layout (cinematic discovery, captions under
+posters, compact requests) and changes only the colours.
 
-## Install from SeerrNG
+| Package ID | Layout    | Built and validated against              |
+| ---------- | --------- | ---------------------------------------- |
+| `cavanagh` | `persius` | SeerrNG 3.72.40 (`snapetech-org/seerrng`) |
 
-In **Settings → General → Appearance**, install:
+SeerrNG interface themes are CSS only: they cannot ship images, fonts or
+icons. Version 2.0.0 therefore drops the crest icons, favicons and login
+backgrounds that the 1.x packages carried. SeerrNG releases from before
+interface themes were introduced cannot install this package; use a 1.x
+release with those.
 
-```text
-https://github.com/KaHooli/cavanagh-seerrng-theme
+## Install
+
+Download `cavanagh-<version>.seerrtheme` and its `.sha256` file from the
+[latest release](https://github.com/KaHooli/cavanagh-seerrng-theme/releases/latest),
+check the download, then install it with the CLI of the SeerrNG release you run
+(as the application user, with the same `CONFIG_DIRECTORY`):
+
+```sh
+sha256sum --check cavanagh-2.0.0.seerrtheme.sha256
+pnpm interface-theme:validate ./cavanagh-2.0.0.seerrtheme
+pnpm interface-theme:install ./cavanagh-2.0.0.seerrtheme
 ```
 
-SeerrNG downloads the latest release, validates it, and installs it under
-`/app/config/themes/cavanagh`.
+On a packaged SeerrNG host without pnpm, use
+`node dist/commands/interfaceTheme.js install ./cavanagh-2.0.0.seerrtheme`.
 
-## Manual installation
-
-Download the release archive and extract the `cavanagh` directory into the
-SeerrNG application data theme directory:
-
-```text
-/app/config/themes/cavanagh/theme.json
-```
-
-On Unraid this normally corresponds to:
-
-```text
-/mnt/user/appdata/seerrng/themes/cavanagh/theme.json
-```
-
-Use **Reload Themes** in SeerrNG after copying or updating the package.
+Restart SeerrNG, then choose **Cavanagh** under **Theme picker → Interface
+design**. To update to a newer release, install it with `--replace` and restart.
 
 ## Palette
 
-- Cavanagh Red: `#8F171B`
-- Deep Oxblood: `#4A0C10`
-- Antique Gold: `#C69A45`
-- Warm Ivory: `#F5EFE3`
-- Charcoal: `#151515`
-- Near Black: `#0C0C0D`
+| Role                  | Dark mode                 | Light mode                 |
+| --------------------- | ------------------------- | -------------------------- |
+| Page                  | Near Black `#0C0C0D`      | Warm Ivory `#F5EFE3`       |
+| Panels                | Charcoal `#151515`        | `#FFFDF8`                  |
+| Text                  | Warm Ivory `#F5EFE3`      | Charcoal `#151515`         |
+| Buttons and focus     | Antique Gold `#D2AB4B`    | Cavanagh Red `#8F171B`     |
+| Links                 | Gold `#E1C26F`            | Cavanagh Red `#8F171B`     |
+| Selected navigation   | Deep Oxblood `#4A0C10`    | `#FDE2E2`                  |
 
-## Icons
-
-`iconDark` and `iconLight` are 180×180 PNGs because iOS ignores SVG home-screen
-icons. They are rendered from `assets/cavanagh-icon-*.svg` with square corners,
-since iOS applies its own rounded mask and fills transparent corners with black.
-The favicons are 32×32 PNGs rendered from the same SVGs, because older Safari
-ignores SVG favicons.
+Text, button and focus colours meet WCAG AA contrast against their
+backgrounds. Success, warning and error colours are PersiusNG's own and are
+unchanged. If a user picks a non-default colour palette in SeerrNG, that
+palette recolours the theme, as it does for PersiusNG.
 
 ## Development
 
-Run `node scripts/validate-theme.mjs` before creating a release. Release tags
-must match the `version` in `theme.json` and use the form `v1.0.0`.
+The theme source is [`cavanagh/manifest.json`](cavanagh/manifest.json) and
+[`cavanagh/theme.css`](cavanagh/theme.css). The stylesheet is PersiusNG 1.0.0's
+with its ID changed to `cavanagh` and its colour values replaced; every
+selector stays scoped to `cavanagh`.
+
+```sh
+npm ci
+npm run validate   # checks cavanagh/ with SeerrNG's own validator
+npm run pack       # writes dist/cavanagh-<version>.seerrtheme and .sha256
+```
+
+The validator is vendored from SeerrNG in [`vendor/seerrng`](vendor/seerrng).
+To release, raise `version` in `cavanagh/manifest.json` and push a matching tag
+such as `v2.0.0`; the release workflow validates, packs and publishes both files.
+
+## Licence
+
+MIT. The stylesheet is derived from SeerrNG's PersiusNG theme, which is also
+MIT licensed; see [`vendor/seerrng/LICENSE`](vendor/seerrng/LICENSE).

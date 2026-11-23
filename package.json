@@ -1,0 +1,16 @@
+{
+  "name": "cavanagh-seerrng-theme",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Cavanagh interface theme for SeerrNG",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/theme.mjs validate",
+    "pack": "node scripts/theme.mjs pack"
+  },
+  "devDependencies": {
+    "jiti": "2.7.0",
+    "postcss": "8.5.28"
+  }
+}
